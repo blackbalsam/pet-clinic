@@ -1,12 +1,12 @@
 package gatis.springframework.petclinic.services.map.impl;
 
 import gatis.springframework.petclinic.model.Vet;
-import gatis.springframework.petclinic.services.CrudService;
+import gatis.springframework.petclinic.services.VetService;
 import gatis.springframework.petclinic.services.map.AbstractMapService;
 
 import java.util.Set;
 
-public class VetMapService extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();

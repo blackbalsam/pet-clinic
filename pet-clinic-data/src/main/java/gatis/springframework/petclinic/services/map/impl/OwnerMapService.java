@@ -1,12 +1,12 @@
 package gatis.springframework.petclinic.services.map.impl;
 
 import gatis.springframework.petclinic.model.Owner;
-import gatis.springframework.petclinic.services.CrudService;
+import gatis.springframework.petclinic.services.OwnerService;
 import gatis.springframework.petclinic.services.map.AbstractMapService;
 
 import java.util.Set;
 
-public class OwnerMapService extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long>{
+public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Owner findById(Long id) {
@@ -31,5 +31,10 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
     @Override
     public void delete(Owner owner) {
         super.delete(owner);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }
