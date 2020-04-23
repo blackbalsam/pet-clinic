@@ -3,9 +3,11 @@ package gatis.springframework.petclinic.services.map.impl;
 import gatis.springframework.petclinic.model.Vet;
 import gatis.springframework.petclinic.services.VetService;
 import gatis.springframework.petclinic.services.map.AbstractMapService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {

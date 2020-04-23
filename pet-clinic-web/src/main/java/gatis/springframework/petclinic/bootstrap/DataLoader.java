@@ -4,8 +4,6 @@ import gatis.springframework.petclinic.model.Owner;
 import gatis.springframework.petclinic.model.Vet;
 import gatis.springframework.petclinic.services.OwnerService;
 import gatis.springframework.petclinic.services.VetService;
-import gatis.springframework.petclinic.services.map.impl.OwnerMapService;
-import gatis.springframework.petclinic.services.map.impl.VetMapService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,9 +13,9 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
-        this.ownerService = new OwnerMapService();
-        this.vetService = new VetMapService();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
