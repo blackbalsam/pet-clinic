@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>List of Pet Owners</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
-<body>
+<body class="container">
     <h1 th:text="'List of Owners'"></h1>
+    <div class="row">
+        <div class="col-sm lead">id</div>
+        <div class="col-sm lead">First Name</div>
+        <div class="col-sm lead">Last Name</div>
+    </div>
+    <div th:each="owner : ${owners}" class="row">
+        <div th:text="${owner.id}" class="col-sm">id</div>
+        <div th:text="${owner.firstName}" class="col-sm">firstName</div>
+        <div th:text="${owner.lastName}" class="col-sm">lastName</div>
+    </div>
 </body>
 </html>
