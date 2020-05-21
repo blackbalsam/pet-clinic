@@ -9,9 +9,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.logging.Logger;
 
 @Component
 public class DataLoader implements CommandLineRunner {
+
+    private static final Logger LOGGER = Logger.getLogger(DataLoader.class.getName());
 
     private final OwnerService ownerService;
     private final VetService vetService;
@@ -88,7 +91,7 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(owner2);
 
-        System.out.println("Loaded Owners...");
+        LOGGER.info("Loaded Owners...");
 
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
@@ -106,6 +109,6 @@ public class DataLoader implements CommandLineRunner {
 
         vetService.save(vet2);
 
-        System.out.println("Loaded Vets...");
+        LOGGER.info("Loaded Vets...");
     }
 }
