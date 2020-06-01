@@ -6,11 +6,13 @@ import gatis.springframework.petclinic.services.OwnerService;
 import gatis.springframework.petclinic.services.PetService;
 import gatis.springframework.petclinic.services.PetTypeService;
 import gatis.springframework.petclinic.services.map.AbstractMapService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;
